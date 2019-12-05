@@ -16,7 +16,7 @@
     }
 
     square(3) // num is defined by 3
-    square () // num is not define, therefore prints: undefined.
+    square () // num is not defined, therefore prints: undefined.
 
     let result = square();
     console.log (result) //prints: undefined
