@@ -35,8 +35,8 @@
         return notes[index]
     }
    
-    // const note = findNote(notes, 'Trip to Amsterdam')
-    // console.log(note)
+    const note = findNote(notes, 'Trip to Amsterdam')
+    console.log(note)
 
     // ------------------------------------------------------------------------
 
@@ -54,10 +54,41 @@
     const november = findNoteNovember(notes, 'November', 'AmsteRdam')
     console.log (november)
 
+     //--------------------------------------------------------------------------------------
+
+     const notes = [ 
+        {
+        title: 'Trip to Norway',
+        description: 'We are going in March, really excited',
+        date: 15
+        }, 
+        {
+        title: 'Trip to germany',
+        description: 'We are going in December, really excited',
+        date: 16
+        }, 
+        {
+        title: 'Trip to Amsterdam',
+        description: 'We are going in November, really excited',
+        date: 21
+        }
+    ]
+
+
+    const findNote = function(notes, noteTitle) {
+        return  notes.find(function(note, index) {
+            return note.title.toLowerCase() === noteTitle.toLowerCase()
+        })
+        
+    }
+
+    const note = findNote(notes, 'trip to amsterdam')
+    console.log(note)
+
 // Challenge (video: 043 Searching Arrays Part II)
 
-    const thingsToDo = ['walk', 'eat', 'sleep', 'cuddle', 'code', 'study', 'play']
-    const thingsToDo = [
+    const ToDoList = ['walk', 'eat', 'sleep', 'cuddle', 'code', 'study', 'play']
+    const toDoList = [
         {
             title: 'walk',
             completed: true
@@ -88,14 +119,15 @@
         },
     ]
 
-    const removeThingsToDo = function (thingsToDo, thingsToDoTitle) {
-        const index = thingsToDo.findIndex(function(todo) {
-            return todo.title.toLowerCase() === thingsToDoTitle.toLowerCase()
+    const deleteOneToDoList = function (list, todoTitle) {
+        const index = list.findIndex(function (todo) {
+            return todo.title.toLowerCase() === todoTitle.toLowerCase()
         })
-        if (index > -1)
-        return thingsToDo.splice(index, 1)
+        
+        return toDoList.splice(index, 1)
     }
-  
-    const removed = removeThingsToDo(thingsToDo, 'play')
-    console.log(removed)
-    console.log (thingsToDo)
+    
+    const deletedItem = deleteOneToDoList(toDoList, 'Play')
+    console.log(deletedItem) 
+    console.log()
+    
